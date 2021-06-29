@@ -13,7 +13,7 @@ import cookieParser from "cookie-parser";
 dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
-app.use(cors({ credentials: true, origin: "https://sixday.netlify.app" }));
+app.use(cors({ credentials: true, origin: "https://sevendays.netlify.app/" }));
 app.use(cookieParser());
 
 mongoose
