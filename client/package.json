@@ -44,5 +44,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://blog-sevenday.herokuapp.com/"
+  "proxy": "https://blog-sevenday.herokuapp.com/api/"
 }

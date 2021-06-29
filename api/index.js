@@ -8,13 +8,10 @@ const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const multer = require("multer");
 const path = require("path");
-import cookieParser from "cookie-parser";
 
 dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
-app.use(cors({ credentials: true, origin: "https://sevendays.netlify.app/" }));
-app.use(cookieParser());
 
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -35,6 +32,8 @@ const storage = multer.diskStorage({
   },
 });
 
+const port = process.env.PORT || 5000;
+
 const upload = multer({ storage: storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File has been uploaded");
@@ -45,6 +44,6 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
-app.listen("5000", () => {
+app.listen(port, () => {
   console.log("Backend is running.");
 });
