@@ -1,0 +1,95 @@
+/* Position: sticky kaydırma çubuklarını takip eder ve istenilen pozisyon 
+ yakalandığında nesneyi o noktada sabitler. Örneğin bir nesne için yukarıdan 
+ 0 konumuna geldiğimiz anda nesnenin sabitlenmesini isteyebiliriz. 
+ sayfanın tamamının dolduğunu düşünelim ve kaydırma çubuğu ile kaydırdığımızda 
+ üste sabitlediğimiz çubuğun kaymasını önlemek için sticky'i kullanıyoruz.
+ */
+.top {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  /* z-index değeri en yüksek öğe en üstte yer alır. 
+  üst üste element biniyorsa ihtiyaç duyarız. 
+  yani birini arkaya birini de öne atmak için  */
+  z-index: 999;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.topIcon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #444;
+  cursor: pointer;
+}
+
+.topCenter {
+  /* 1 tane eleman olunca (Anasayfa, Yaz, iletişim, Hakkımda hepsini 
+  tek bir tag içinde topluyoruz) farketmiyor kaça ayırdığım */
+  flex: 1;
+  margin-left: 10vh;
+}
+
+.topList {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topListItem {
+  margin-right: 20px;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.topListItem:hover {
+  color: gray;
+}
+
+.topImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 17vh;
+  cursor: pointer;
+}
+
+.logout {
+  position: absolute;
+  padding: 15px;
+  margin-left: 6vh;
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 500px) {
+  .topCenter {
+    margin-left: 5vh;
+  }
+  .topListItem {
+    font-size: 13px;
+  }
+  .topImg {
+    width: 30px;
+    height: 30px;
+    margin-right: 12vh;
+  }
+  .logout {
+    position: absolute;
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+/* 
+.topSearchIcon {
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+} */
